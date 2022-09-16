@@ -1,0 +1,7 @@
+createV i 0
+p "Input the amount of random numbers to generate"
+createV rands i
+w &i < &rands
+    p random()
+    setV i &i+1
+endw

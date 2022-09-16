@@ -1,0 +1,35 @@
+{These} are auto filled
+<These> are required
+[These] are not required
+
+dir <filepath>
+| Sets the directory to use, default /root-dir/path/to/S-ScriptShell/jar/ | Example: C:/Users/user123/Documents/S-Script/
+
+nav <filepath>
+| Adds to the current directory
+
+back
+| Goes back a folder in the directory
+
+debug <bool>
+| Sets debug mode, default false.
+
+ignoreErrors <bool>
+| Ignore s-script errors, causes alot of NullPointerExceptions, default false.
+
+run {current directory}<filepath>{.s-script}
+| Runs a s-script file
+
+save <name>
+| Saves config to a file.
+
+load <name>
+| Loads a config file.
+
+list
+| lists all files in the current directory
+
+end
+| terminates the java program
+
+\.

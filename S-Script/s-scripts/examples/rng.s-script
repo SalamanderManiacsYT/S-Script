@@ -1,0 +1,13 @@
+|| random was added
+
+createV random floor(random() * 3) + 1
+
+p "Your random number is "+&random
+
+if &random == 1
+    p "1 is a lonely number."
+elseif &random == 2
+    p "2 is a couple."
+else
+    p "3 is a group."
+endif

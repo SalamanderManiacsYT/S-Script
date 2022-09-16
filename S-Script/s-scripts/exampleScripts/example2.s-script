@@ -1,0 +1,15 @@
+p ""
+p "This print came from a seperate file!"
+p ""
+f math
+    || Tab for cleanliness, again
+    p ""
+    p "Running math in example2.s-script"
+    p "Sin of 83 is "+sin(83)+"."
+    p ""
+endf
+f runExample3
+    p ""
+    p "Running exampleFolder/example3.s-script from example2.s-script's function in example.s-script"
+    runFile exampleFolder/example3
+endf

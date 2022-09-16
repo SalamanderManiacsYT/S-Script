@@ -1,0 +1,18 @@
+createV fibo [0,1]
+
+p "0"
+p "1"
+
+createV temp 1
+createV new 1
+createV i 0
+
+w &i < 100
+
+    setV temp &fibo.1
+    setV new &fibo.0+&fibo.1
+    p &new
+    setV fibo [&temp,&new]
+    setV i &i+1
+
+endw

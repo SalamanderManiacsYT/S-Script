@@ -1,0 +1,23 @@
+|| The \n-s are used to flush the console.
+
+|| basically just escape character examples
+
+p "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWrite your name.\n"
+
+createV h i
+
+p "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWrite your most famous quote.\n"
+
+createV hh i
+
+p "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\""+&hh+"\" - "+&h
+
+createV hhh r quoteBook.txt
+
+addToArray hhh "\""+&hh+"\" - "+&h
+
+write quoteBook.txt &hhh
+
+createV test i
+
+p &hhh.&test

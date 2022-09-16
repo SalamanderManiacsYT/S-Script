@@ -1,0 +1,97 @@
+|| So I want to explain what this is
+|| example.s-script is a somewhat display of s-script's functions.
+|| It doesn't have everything but its still here
+
+
+
+p "Hello!"
+p "This is a custom coding language!"
+|| Comment
+
+runFile example2
+
+f testFunction
+    || Tab for cleanliness
+    p "This came from test Function, on line 15, but was run at line 27 and 29."
+endf
+
+f math
+    || Tab for cleanliness, again
+    p ""
+    p "Running math in example.s-script"
+    p "Cos of 83 is "+cos(83)+"."
+    p ""
+endf
+
+p "This is line 26."
+runf testFunction
+p "This is line 28."
+runf testFunction
+
+runf example2.math
+
+p "Back to example.s-script"
+
+runf math
+
+|| Originally there wasn't too much functionality with evals, but now it got serious:
+
+p 1+2 > 2
+
+p 3+4
+
+p ["test",1,true,tan(81)>3,sin(2)]
+
+|| Variables added
+
+createV a "a"
+p "a = "+&a
+createV b 1+1
+p "b = "+&b
+setV a "a2"
+p "a = "+&a
+setV b &b+"using a variable in a eval"
+p "b = "+&b
+
+|| This function is confusing
+
+runf example2.runExample3
+
+|| Inputs
+
+p "How many birds do you see?"
+createV birds i
+p "I see "+(&birds+2)+" birds!"
+
+|| If statements
+
+if &birds > 50
+p ""
+p (&birds+2)+" is alot of birds."
+p "So is "+&birds+"."
+p "Wow."
+p ""
+else
+p ""
+p "Man, I wish we could see more birds."
+p ""
+endif 1
+
+|| Nested if statements (regular if statements are confusing enough with the way s-script runs, I hated making these)
+p "-# or +#?"
+createV 1 i
+p "-# or +# one more time?"
+createV 2 i
+if &1 < 0
+    if &2 < 0
+        p "- & -, cool!"
+    else
+        p "- & +, cool!"
+    endif 
+else
+    if &2 < 0
+        p "+ & -, cool!"
+    else
+        p "+ & +, cool!"
+    endif 
+endif 

@@ -1,0 +1,54 @@
+p "If an error occurs, replace all / with \\ in simpleGame.s-script!!"
+
+createV health 100
+createV maxhealth 100
+createV xp 0
+createV xpneed 10
+createV level 1
+createV enemyhp 7
+createV enemyhpm 7
+createV saveData r simpleGameSave/save.save
+createV test []
+createV test2 [""]
+if &saveData != &test && &saveData != &test2
+    setV maxhealth &saveData.0
+    setV xp &saveData.1
+    setV xpneed &saveData.2
+    setV level &saveData.3
+    setV health &maxhealth
+    setV enemyhp (floor(random() * 4) + 7)*&level
+    setV enemyhpm &enemyhp
+endif
+createV choice 0
+w &choice != 2
+    p ""
+    p "Enemy: "+&enemyhp+"/"+&enemyhpm+" health"
+    p "You: "+&health+"/"+&maxhealth+" health"
+    p "1 to fight\n2 to leave"
+    p " > "
+    setV choice i
+    p ""
+    if &choice == 1
+        setV enemyhp &enemyhp - floor(3*(&level^1.24))
+        p "You deal "+floor(3*(&level^1.24))+" damage!"
+        if &enemyhp < 0
+            setV enemyhp (floor(random() * 4) + 7)*&level
+            setV xp &xp+&enemyhpm
+            p "You killed the enemy!\nYou gained "+&enemyhpm+" xp!"
+            setV enemyhpm &enemyhp
+            if &xp > &xpneed
+                p "You leveled up!"
+                setV xp &xp-&xpneed
+                setV xpneed floor(&xpneed ^ 1.14)
+                setV level &level + 1
+                setV maxhealth floor(&maxhealth ^ 1.14)
+                p "You are now level "+&level
+            endif
+        else
+            setV health &health - floor(6*(&level^1.24))
+            p "You took "+floor(6*(&level^1.24))+" damage!"
+        endif
+    endif
+endw
+
+write simpleGameSave/save.save [maxhealth,xp,xpneed,level]

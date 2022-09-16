@@ -1,0 +1,11 @@
+-----------------------------------------------------------------------------------------------------------------------------
+Changelog start
+-----------------------------------------------------------------------------------------------------------------------------
+Sep 15 2022 - First Release
+yeah so just basic stuff
+while loop :o
+also delay
+changed from nashorn js engine --> rhino js engine (now compatible on versions Java 15+)
+i made if statements 10x better, they sucked before i released it
+better file pathing lol
+-----------------------------------------------------------------------------------------------------------------------------

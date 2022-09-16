@@ -1,0 +1,79 @@
+No multi line stacking (i.e. 'p "hi" || prints hi') with s-script, sorry
+
+[brackets] are optional choices, <LT GT> are required. for info on <eval>/[eval] see eval docs
+
+s-script will run until it hits an error, unless you have ignore errors on (see consoleCmdDocs)
+
+
+
+p <eval(any)>
+
+| Prints to the console. What did you think it did?
+
+
+
+f name  
+    code
+    code
+    code
+endf
+
+runf [filename(if not local!!)].<function>
+
+| Function syntaxes. Arguments eventually will come out.
+
+
+
+|| [literally anything]
+
+| Comment, must have space between comment declaration and whatever after. I will eventually add |* and *|
+
+
+
+runFile <filepath(s-script)>
+
+| Runs another s-script file and enables its functions, being you use the correct syntax, filename.functionname. Filepath is relative to the main file being run but may change.
+
+
+
+createV <name> <eval(any)>
+
+setV <name> <eval(any)>
+
+addToArray <name(array)> <eval(any)>
+
+| Create a variable, weakly typed (it can change from int -> string -> bool -> array). setV sets a variable.
+
+
+
+if <eval(bool)>
+
+elseif <eval(bool)>
+
+else 
+
+endif
+
+| If statement syntaxes.
+
+
+
+write <filepath(any)> <eval(array)>
+
+| Write to a file (Clears the file! To add a new line read the file THEN use addToArray THEN write).
+
+
+
+w <eval(bool)>
+
+endw
+
+| While loop syntaxes (i hate causing myself pain)
+
+
+
+delay ms
+
+| Delay, use in while loops so it doesnt terminate
+
+\.

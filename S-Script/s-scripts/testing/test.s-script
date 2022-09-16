@@ -1,0 +1,5 @@
+createV test r test.txt
+p &test
+addToArray test "New string added to file!"
+p &test
+write test.txt &test
